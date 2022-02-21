@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+.header {
+    display: flex;
+    align-items: stretch;
+    width: 100vw;
+    min-height: 8rem;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include sp {
+        display: block;
+        position: static;
+        transform: none;
+        padding-top: 1.8rem;
+        width: 100%;
+    }
+
+    &-title {
+        margin-left: 9.1rem;
+        width: 10rem;
+
+        @include sp {
+            margin: 0;
+            width: 8rem;
+        }
+
+        a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;  
+            
+            @include sp {
+                display: block;
+            }
+        }
+    }
+
+    &-menu {
+        margin-left: 4.5rem;
+
+        @include sp {
+            margin: 0 -1.6rem;
+            width: 36.1rem;
+        }
+
+
+        &-list {
+            display: flex;
+            align-items: stretch;
+            height: 100%;
+
+            @include sp {
+                margin: auto;
+                // margin: auto;が効いていない
+            }
+
+
+            &-unit {
+                height: 100%;
+            }
+
+            a {
+                padding: 0 1.5rem;
+                text-decoration: none;
+                font-size: 1.4rem;
+                color: #000;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @include sp {
+                    height: 100%;
+                    padding: 0.8rem 1.5rem 1.8rem;
+                }
+            }
+        }
+    }
+
+    &-document {
+        color: #fff;
+        font-size: 1.2rem;
+        text-decoration: none;
+        background-color: #000;
+        margin-left: auto;
+        width: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include sp {
+            display: none;
+        }
+    }
+}

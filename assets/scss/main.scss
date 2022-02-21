@@ -1,0 +1,366 @@
+@charset "utf-8";
+@import "common";
+
+.wrapper {
+    width: 100rem;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+
+    @include sp {
+        width: 100%;
+        padding: 0 1.6rem;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100vw;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #E4E4E4;
+        z-index: -1;
+    }
+}
+
+.common {
+    &-section {
+        margin-top: 12rem;
+
+        @include sp {
+            margin-top: 8rem;
+        }
+    }
+
+    &-title {
+        font-size: 3.6rem;
+        font-weight: normal;
+        letter-spacing: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &-subtitle {
+        font-size: 1.4rem;
+        margin-bottom: 7.6rem;
+        position: relative;
+
+        @include sp {
+            margin-bottom: 6.8rem;
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 4rem;
+            height: 0.1rem;
+            background-color: #000;
+            bottom: -3.6rem;
+
+            @include sp {
+               bottom: -2.4rem;
+            }
+        }
+    }
+}
+
+.main {
+    margin-bottom: 18.5rem;
+
+    @include sp {
+        margin-bottom: 0;
+    }
+
+    &-hero {
+        height: 60rem;
+        position: relative;
+        z-index: 1;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 100%;
+            background: url("../images/main-hero.webp") bottom/cover no-repeat;
+            z-index: -1;
+        }
+    }
+    
+    &-section-news {
+
+        &-topics {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -2rem;
+
+            @include sp {
+                margin: -2rem 0 0;
+            }
+        }
+    
+        &-topic {
+            border-right: 0.1rem solid #000;
+            width: calc(100%/3);
+
+            @include sp {
+                width: 100%;
+                border: none;
+            }
+    
+            &:last-child {
+                border: none;
+            }
+    
+    
+            a {
+                display: block;
+                text-decoration: none;
+                color: #000;
+                padding: 1rem 0 1.6rem 2rem;
+
+                @include sp {
+                    padding: 2rem 0;
+                }
+            }
+    
+            &-time {
+                font-size: 1.4rem;
+                margin-right: 2.6rem;
+            }
+    
+            &-news {
+                display: inline-block;
+                font-size: 1.2rem;
+                padding: 0.3rem 0.7rem;
+                background-color: #000;
+                color: #fff;
+            }
+    
+            &-text {
+                font-size: 1.6rem;
+                overflow-wrap: break-word;
+                margin-top: 1.6rem;
+            }
+        }
+    }
+    
+    &-section-about {
+    
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 12rem -20rem 0;
+
+        @include sp {
+            margin: 9rem 0 0;
+        }
+    
+        &-image {
+            width: 76rem;
+            height: 40rem;
+
+            @include sp {
+                margin: 0 -1.6rem;
+                height: 100%;
+                // width: 100%;これを指定するとずれる
+            }
+    
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+
+                @include sp {
+                    width: 100%;
+                }
+            }
+        }
+    
+        &-category {
+            margin-top: 18rem;
+            width: 47.3rem;
+
+            @include sp {
+                margin-top: 3rem;
+                width: 100%;
+            }
+    
+            &-group {
+                font-size: 1.4rem;
+                margin-top: 5rem;
+                line-height: 3rem;
+            }
+        }
+    }
+    
+    &-section-business {
+
+        &-container {
+            width: 80rem;
+            height: 58.7rem;
+            margin: 18.6rem auto 0;
+
+            @include sp {
+                width: 100%;
+                height: 100%;
+                margin: 0 auto;
+            }
+
+            &-group {
+                margin-left: -6.4rem;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                justify-content: space-between;
+                height: inherit;
+
+                @include sp {
+                    margin: -3rem 0 0;
+                }
+
+                &-box {
+                    width: 36.8rem;
+                    margin-left: 6.4rem;
+
+                    @include sp {
+                        margin: 3rem 0 0;
+                        width: 100%;
+                    }
+
+                    &:nth-child(3){
+                        margin-top: -10rem;
+
+                        @include sp {
+                            margin-top: 3rem;
+                        }
+                    }
+
+                    &:nth-child(4){
+                        margin-bottom: 10rem;
+
+                        @include sp {
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    &-image {
+
+                        &-title {
+                            font-size: 1.4rem;
+                            margin-bottom: 1rem;
+                            padding-left: 1.8rem;
+                            position: relative;
+
+                            &::before {
+                                display: inline-block;
+                                background-color: #000;
+                                content: "";
+                                width: 0.8rem;
+                                height: 0.1rem;
+                                position: absolute;
+                                top: 50%;
+                                left: 0;
+                                transform: translateY(-50%);
+                            }
+                        }
+
+                        &-file {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        } 
+    }
+    
+    &-section-company {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 10rem 0;
+        background: linear-gradient(to right, #fff 0, #fff 56.7rem, transparent 56.7rem, transparent 100%);
+
+        @include sp {
+            background: none;
+            padding: 0;
+        }
+        
+        &-category {
+
+            padding-left: 6.2rem;
+
+            @include sp {
+                width: 100%;
+                background-color: #fff;
+                padding: 4rem 1rem 4rem 2rem;
+
+            }
+
+            &-list {
+                width: 39.1rem;
+
+                @include sp {
+                    width: 100%;
+                }
+
+                &-group {
+                    display: flex;
+                    flex-wrap: wrap;
+                    font-size: 1.4rem;
+                    margin-top: 1rem;
+
+                    @include sp {
+                        display: block;
+                        margin-top: 0.5rem;
+                    }
+
+                    &-description {
+                        width: 8.5rem;
+
+                        @include sp {
+                            width: 100%;
+                        }
+                    }
+
+                    &-detail {
+                         
+                        @include sp {
+                            margin-left: 1.4rem;
+                        }
+
+                        &-information-post {
+
+                            @include sp {
+                                margin-left: 1.4rem;
+                            }
+    
+                            &:nth-of-type(n+2){
+                                margin-top: 1rem;
+
+                                @include sp {
+                                    margin-top: 0.5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &-image {
+            width: 54.7rem;
+
+            @include sp {
+                margin: 2rem -1.6rem 0 -1.6rem;
+            }
+        }
+    }
+
+}
